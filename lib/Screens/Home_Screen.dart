@@ -5,14 +5,25 @@ import 'package:provider/provider.dart';
 
 final TextEditingController textEditingController = TextEditingController();
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
    const HomeScreen({super.key});
 
   @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  @override
   void initState()
   {
+  // read  existing habits on app startup
 
+    Provider.of<HabitDataBase>(context,listen: false).readHabits();
+    super.initState();
   }
+
+
+
   // create  new habit
   @override
   Widget build(BuildContext context) {
