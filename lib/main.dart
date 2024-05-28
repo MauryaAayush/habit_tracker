@@ -6,23 +6,26 @@ import 'Screens/Home_Screen.dart';
 import 'Themes/Theme_Provider.dart';
 
 Future<void> main() async {
-
   WidgetsFlutterBinding.ensureInitialized();
   // initializing database
   await HabitDataBase.initialize();
   await HabitDataBase.saveFirstLaunchDate();
 
-
   runApp(MultiProvider(
     providers: [
+      //  Provider of Theme
       ChangeNotifierProvider(
         create: (context) => ThemeProvider(),
+      ),
+
+      // Provider of habit
+      ChangeNotifierProvider(
+        create: (context) => HabitDataBase(),
       )
     ],
     child: const MyApp(),
   ));
 }
-
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -34,9 +37,7 @@ class MyApp extends StatelessWidget {
       title: 'Habit Tracker',
       debugShowCheckedModeBanner: false,
       home: const HomeScreen(),
-      theme:  Provider.of<ThemeProvider>(context).themeData,
+      theme: Provider.of<ThemeProvider>(context).themeData,
     );
   }
 }
-
-
