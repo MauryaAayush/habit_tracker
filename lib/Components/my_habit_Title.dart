@@ -16,7 +16,11 @@ class MyHabitTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
+        if(onChanged != null  )
+          {
+          // toggle completion status
 
+          }
       },
       child: Container(
         padding: const EdgeInsets.all(12),
