@@ -9,7 +9,7 @@ class MyHabitTitle extends StatelessWidget {
     super.key,
     required this.text,
     required this.isCompleted,
-    required
+    required this.onChanged,
   });
 
   @override
