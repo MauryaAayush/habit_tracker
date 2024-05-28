@@ -15,7 +15,11 @@ class HomeScreen extends StatelessWidget {
         builder: (context) => AlertDialog(
           content: TextField(
             controller: textEditingController,
+            decoration: const InputDecoration(
+              hintText: "Create a new habit",
+            ),
           ),
+          actions: [],
         ),
       );
     }
@@ -27,7 +31,10 @@ class HomeScreen extends StatelessWidget {
         backgroundColor: Theme.of(context).colorScheme.tertiary,
         onPressed: createNewHabit,
         elevation: 0,
-        child: Icon(Icons.add),
+        child: Icon(
+          Icons.add,
+          color: Colors.black,
+        ),
       ),
     );
   }
