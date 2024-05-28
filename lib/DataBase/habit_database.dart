@@ -128,11 +128,13 @@ async {
       //   update name
         await isar.writeTxn(() async{
           habit.name = newName;
+        //   save update habit back to the database
+          await isar.habits.put(habit);
         });
       }
 
-
   //   re-read from database
+    readHabits();
   }
 // Delete -> delete habit
 }
