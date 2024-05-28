@@ -114,8 +114,25 @@ async {
       }
 
   //   re-read from database
+    readHabits();
   }
 // Update -> edit habit name
+  Future<void> updateHabitName(int id, String newName)
+  async {
+    // find the specific habit
+    final habit = await isar.habits.get(id);
 
+    // update habit name
+    if(habit != null)
+      {
+      //   update name
+        await isar.writeTxn(() async{
+          habit.name = newName;
+        });
+      }
+
+
+  //   re-read from database
+  }
 // Delete -> delete habit
 }
