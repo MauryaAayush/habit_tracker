@@ -74,7 +74,10 @@ async {
 
 
 // Update -> check habits on and off
-
+  void updateHabitCompletion(int id, bool isCompleted)
+  {
+    final habit = await
+  }
 // Update -> edit habit name
 
 // Delete -> delete habit
