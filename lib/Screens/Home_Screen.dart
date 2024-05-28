@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:habit_tracker/Components/My_Drawer.dart';
+import 'package:habit_tracker/DataBase/habit_database.dart';
+import 'package:provider/provider.dart';
 
 final TextEditingController textEditingController = TextEditingController();
 
@@ -23,9 +25,9 @@ class HomeScreen extends StatelessWidget {
           //   save Button
             MaterialButton(onPressed: () {
             //   get the new habit name
-
+                  String newHabitName = textEditingController.text;
             //   Save to database
-
+                  context.read<HabitDataBase>().addhabit(newHabitName);
             //   pop box
 
             //   clear controller
