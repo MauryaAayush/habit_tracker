@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 
 class MyHabitTitle extends StatelessWidget {
   final bool isCompleted;
-
+  final String text;
   const MyHabitTitle({
     super.key,
+    required this.text,
     required this.isCompleted,
   });
 
@@ -16,6 +17,7 @@ class MyHabitTitle extends StatelessWidget {
             ? Colors.green
             : Theme.of(context).colorScheme.secondary,
       ),
+      child: Text(text),
     );
   }
 }
