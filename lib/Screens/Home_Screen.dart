@@ -69,7 +69,10 @@ class _HomeScreenState extends State<HomeScreen> {
   // check habit on & off
   void checkHabitOnOff(bool? value, Habit habit) {
   //   update habit completion status
-
+  if(value != null)
+    {
+      context.read<HabitDataBase>().updateHabitCompletion(habit.id, value);
+    }
 
   }
 
