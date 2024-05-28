@@ -74,9 +74,9 @@ async {
 
 
 // Update -> check habits on and off
-  void updateHabitCompletion(int id, bool isCompleted)
-  {
-    final habit = await
+  Future<void> updateHabitCompletion(int id, bool isCompleted)
+  async {
+    final habit = await isar.habits.get(id);
   }
 // Update -> edit habit name
 
