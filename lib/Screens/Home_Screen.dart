@@ -6,8 +6,13 @@ import 'package:provider/provider.dart';
 final TextEditingController textEditingController = TextEditingController();
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+   const HomeScreen({super.key});
 
+  @override
+  void initState()
+  {
+
+  }
   // create  new habit
   @override
   Widget build(BuildContext context) {
