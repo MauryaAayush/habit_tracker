@@ -24,6 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
     super.initState();
   }
 
+  // create  new habit
   void createNewHabit() {
     showDialog(
       context: context,
@@ -65,7 +66,9 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  // create  new habit
+  // check habit on & off
+  void checkHabitOnOff(bool? value, Habit habit) {}
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -100,7 +103,11 @@ class _HomeScreenState extends State<HomeScreen> {
         bool isCompletedToday = isHabitCompletedToday(habit.completeddays);
 
         // return habit tile UI
-        return MyHabitTitle(text: habit.name, isCompleted: isCompletedToday,onChanged: (value) => checkHabitOnOff(value),);
+        return MyHabitTitle(
+          text: habit.name,
+          isCompleted: isCompletedToday,
+          onChanged: (value) => checkHabitOnOff(value,habit),
+        );
       },
     );
   }
