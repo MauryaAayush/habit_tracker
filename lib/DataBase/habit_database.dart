@@ -84,10 +84,30 @@ async {
           // if habit is completed -> add the  current date to the completed Days List
           if(isCompleted && !habit.completeddays.contains(DateTime.now()))
             {
+              final today = DateTime.now();
 
-            }else{
+            // add the current date if it's not already oin the list
+              habit.completeddays.add(
+                DateTime(
+                  today.year,
+                  today.month,
+                  today.day,
+                )
+              );
+            }
+          // if habit is Not completed -> remove the current date from the list
+          else{
+          // remove the current date if the habit is marked as not completed
 
+            habit.completeddays.removeWhere((date) =>
+            date.year == DateTime.now().year &&
+            date.month == DateTime.now().month &&
+            date.day == DateTime.now().day
+            );
           }
+
+        //   save the updated habits back to the database
+          await isar.habits.put(habit);
         });
       }
     else
