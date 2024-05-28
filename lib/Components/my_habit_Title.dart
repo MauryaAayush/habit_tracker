@@ -13,6 +13,7 @@ class MyHabitTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(12),
+      margin: EdgeInsets.all(12),
       decoration: BoxDecoration(
         color: isCompleted
             ? Colors.green
