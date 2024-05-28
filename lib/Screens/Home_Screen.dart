@@ -19,7 +19,14 @@ class HomeScreen extends StatelessWidget {
               hintText: "Create a new habit",
             ),
           ),
-          actions: [],
+          actions: [
+          //   save Button
+            MaterialButton(onPressed: () {
+            //   get the new habit name 
+            },)
+
+          //   Cancel Button
+          ],
         ),
       );
     }
