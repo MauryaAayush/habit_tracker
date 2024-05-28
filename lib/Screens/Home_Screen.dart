@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:habit_tracker/Components/My_Drawer.dart';
 import 'package:habit_tracker/DataBase/habit_database.dart';
+import 'package:habit_tracker/Models/habit.dart';
 import 'package:provider/provider.dart';
 
 final TextEditingController textEditingController = TextEditingController();
@@ -13,61 +14,59 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+
   @override
   void initState()
   {
   // read  existing habits on app startup
-
     Provider.of<HabitDataBase>(context,listen: false).readHabits();
     super.initState();
   }
 
+  void createNewHabit() {
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        content: TextField(
+          controller: textEditingController,
+          decoration: const InputDecoration(
+            hintText: "Create a new habit",
+          ),
+        ),
+        actions: [
+          //   save Button
+          MaterialButton(
+            onPressed: () {
+              //   get the new habit name
+              String newHabitName = textEditingController.text;
+              //   Save to database
+              context.read<HabitDataBase>().addhabit(newHabitName);
+              //   pop box
+              Navigator.pop(context);
+              //   clear controller
+              textEditingController.clear();
+            },
+            child: const Text('Save'),
+          ),
 
+          //   Cancel Button
+          MaterialButton(
+            onPressed: () {
+              //   pop box
+              Navigator.pop(context);
+              //   clear controller
+              textEditingController.clear();
+            },
+            child: const Text('Cancel'),
+          )
+        ],
+      ),
+    );
+  }
 
   // create  new habit
   @override
   Widget build(BuildContext context) {
-
-    void createNewHabit() {
-      showDialog(
-        context: context,
-        builder: (context) => AlertDialog(
-          content: TextField(
-            controller: textEditingController,
-            decoration: const InputDecoration(
-              hintText: "Create a new habit",
-            ),
-          ),
-          actions: [
-            //   save Button
-            MaterialButton(
-              onPressed: () {
-                //   get the new habit name
-                String newHabitName = textEditingController.text;
-                //   Save to database
-                context.read<HabitDataBase>().addhabit(newHabitName);
-                //   pop box
-                Navigator.pop(context);
-                //   clear controller
-                textEditingController.clear();
-              },
-              child: const Text('Save'),
-            ),
-
-            //   Cancel Button
-            MaterialButton(
-              onPressed: () {
-                //   pop box
-                Navigator.pop(context);
-                //   clear controller
-                textEditingController.clear();
-              },
-              child: const Text('Cancel'),
-            )
-          ],
-        ),
-      );
-    }
 
     return Scaffold(
       appBar: AppBar(),
@@ -81,6 +80,20 @@ class _HomeScreenState extends State<HomeScreen> {
           color: Colors.black,
         ),
       ),
+      body: _buildHabitList(),
     );
   }
+
+  Widget _buildHabitList()
+  {
+    final habitDataBase = context.watch<HabitDataBase>();
+
+    // current habits
+    List<Habit> currrentHabits = habitDataBase.currentHabits;
+
+    return ListView.builder(itemBuilder: (context, index) {
+
+    },);
+  }
+
 }
