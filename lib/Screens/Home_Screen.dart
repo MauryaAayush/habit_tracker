@@ -67,7 +67,11 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   // check habit on & off
-  void checkHabitOnOff(bool? value, Habit habit) {}
+  void checkHabitOnOff(bool? value, Habit habit) {
+  //   update habit completion status
+
+
+  }
 
   @override
   Widget build(BuildContext context) {
