@@ -23,7 +23,7 @@ class HabitDataBase extends ChangeNotifier {
 
 // save first date of app startup (for heatmap)
 
- static  Future<void> saveFirstLaunchDate() async {
+  static Future<void> saveFirstLaunchDate() async {
     final existingSettings = await isar.appSettings.where().findFirst();
     if (existingSettings == null) {
       final settings = AppSettings()..firstLaunchDate = DateTime.now();
@@ -43,12 +43,39 @@ crud operations
  */
 
 // List of habits
+  final List<Habit> currentHabits = [];
 
-// Craet -> add a new habit
+// Create -> add a new habit
+
+  Future<void> addhabit(String habitName)
+  async {
+    final newHabit = Habit()..name = habitName;
+
+  //   save to database
+    await isar.writeTxn(() => isar.habits.put(newHabit));
+
+  //   re-read from database
+    readHabits();
+  }
+
 
 // Read -> read saved habits from database
+Future<void> readHabits()
+async {
+    // here we are fetching value from database
+  List<Habit> fetchedHabits = await isar.habits.where().findAll();
+
+  //now give to current habits
+  currentHabits.clear();
+  currentHabits.addAll(fetchedHabits);
+
+  notifyListeners();
+}
+
 
 // Update -> check habits on and off
 
 // Update -> edit habit name
+
+// Delete -> delete habit
 }
