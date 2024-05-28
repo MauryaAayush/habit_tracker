@@ -76,8 +76,10 @@ async {
 // Update -> check habits on and off
   Future<void> updateHabitCompletion(int id, bool isCompleted)
   async {
+    // find the specific habit
     final habit = await isar.habits.get(id);
 
+    // update completion status
     if(habit != null)
       {
         await isar.writeTxn(() async{
@@ -110,10 +112,8 @@ async {
           await isar.habits.put(habit);
         });
       }
-    else
-        {
 
-        }
+  //   re-read from database
   }
 // Update -> edit habit name
 
