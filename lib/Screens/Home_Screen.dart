@@ -29,11 +29,20 @@ class HomeScreen extends StatelessWidget {
             //   Save to database
                   context.read<HabitDataBase>().addhabit(newHabitName);
             //   pop box
-
+                   Navigator.pop(context);
             //   clear controller
-            },)
+                  textEditingController.clear();
+
+            },
+            child: const Text('Save'),),
 
           //   Cancel Button
+            MaterialButton(onPressed: () {
+            //   pop box
+              Navigator.pop(context);
+            //   clear controller
+              textEditingController.clear();
+            },)
           ],
         ),
       );
