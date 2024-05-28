@@ -1,10 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import 'DataBase/habit_database.dart';
 import 'Screens/Home_Screen.dart';
 import 'Themes/Theme_Provider.dart';
 
-void main() {
+Future<void> main() async {
+
+  WidgetsFlutterBinding.ensureInitialized();
+  // initializing database
+  await HabitDataBase.initialize();
+
+
   runApp(MultiProvider(
     providers: [
       ChangeNotifierProvider(
