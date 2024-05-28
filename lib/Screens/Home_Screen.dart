@@ -11,6 +11,7 @@ class HomeScreen extends StatelessWidget {
   // create  new habit
   @override
   Widget build(BuildContext context) {
+
     void createNewHabit() {
       showDialog(
         context: context,
