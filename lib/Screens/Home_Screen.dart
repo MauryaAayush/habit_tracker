@@ -24,6 +24,7 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(),
       drawer: const MyDrawer(),
       floatingActionButton: FloatingActionButton(
+        backgroundColor: Theme.of(context).colorScheme.tertiary,
         onPressed: () {},
         elevation: 0,
       ),
