@@ -100,7 +100,7 @@ class _HomeScreenState extends State<HomeScreen> {
         bool isCompletedToday = isHabitCompletedToday(habit.completeddays);
 
         // return habit tile UI
-          return MyHabitTitle(text: habit.name, isCompleted: isCompletedToday)
+          return MyHabitTitle(text: habit.name, isCompleted: isCompletedToday);
 
       },
     );
