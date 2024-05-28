@@ -23,19 +23,17 @@ class HabitDataBase extends ChangeNotifier {
 
 // save first date of app startup (for heatmap)
 
-  Future<void> saveFirstLaunchDate()
-  async {
+  Future<void> saveFirstLaunchDate() async {
     final existingSettings = await isar.appSettings.where().findFirst();
-    if(existingSettings == null)
-      {
-        final settings  = AppSettings()..firstLaunchDate = DateTime.now();
-        await isar.writeTxn(() => isar.appSettings.put(settings));
-      }
+    if (existingSettings == null) {
+      final settings = AppSettings()..firstLaunchDate = DateTime.now();
+      await isar.writeTxn(() => isar.appSettings.put(settings));
+    }
   }
+
 // get first date of app startup (for heatmap)
 
-  Future<DateTime?> getFirstLaunchDate()
-  async {
+  Future<DateTime?> getFirstLaunchDate() async {
     final settings = await isar.appSettings.where().findFirst();
     return settings?.firstLaunchDate;
   }

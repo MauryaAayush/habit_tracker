@@ -10,6 +10,7 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   // initializing database
   await HabitDataBase.initialize();
+  await HabitDataBase.saveFirstLaunchDate();
 
 
   runApp(MultiProvider(
