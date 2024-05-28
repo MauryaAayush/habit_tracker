@@ -7,19 +7,17 @@ import 'package:provider/provider.dart';
 final TextEditingController textEditingController = TextEditingController();
 
 class HomeScreen extends StatefulWidget {
-   const HomeScreen({super.key});
+  const HomeScreen({super.key});
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-
   @override
-  void initState()
-  {
-  // read  existing habits on app startup
-    Provider.of<HabitDataBase>(context,listen: false).readHabits();
+  void initState() {
+    // read  existing habits on app startup
+    Provider.of<HabitDataBase>(context, listen: false).readHabits();
     super.initState();
   }
 
@@ -67,7 +65,6 @@ class _HomeScreenState extends State<HomeScreen> {
   // create  new habit
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: AppBar(),
       drawer: const MyDrawer(),
@@ -84,16 +81,15 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  Widget _buildHabitList()
-  {
+  Widget _buildHabitList() {
     final habitDataBase = context.watch<HabitDataBase>();
 
     // current habits
     List<Habit> currrentHabits = habitDataBase.currentHabits;
 
-    return ListView.builder(itemBuilder: (context, index) {
-
-    },);
+    return ListView.builder(
+      itemBuilder: (context, index) {
+      },
+    );
   }
-
 }
