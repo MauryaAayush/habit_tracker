@@ -22,7 +22,13 @@ class HomeScreen extends StatelessWidget {
           actions: [
           //   save Button
             MaterialButton(onPressed: () {
-            //   get the new habit name 
+            //   get the new habit name
+
+            //   Save to database
+
+            //   pop box
+
+            //   clear controller
             },)
 
           //   Cancel Button
