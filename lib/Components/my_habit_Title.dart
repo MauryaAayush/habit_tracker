@@ -12,6 +12,7 @@ class MyHabitTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: EdgeInsets.all(12),
       decoration: BoxDecoration(
         color: isCompleted
             ? Colors.green
