@@ -25,8 +25,9 @@ class HomeScreen extends StatelessWidget {
       drawer: const MyDrawer(),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Theme.of(context).colorScheme.tertiary,
-        onPressed: () {},
+        onPressed: createNewHabit,
         elevation: 0,
+        child: Icon(Icons.add),
       ),
     );
   }
