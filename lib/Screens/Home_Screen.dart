@@ -4,6 +4,8 @@ import 'package:habit_tracker/DataBase/habit_database.dart';
 import 'package:habit_tracker/Models/habit.dart';
 import 'package:provider/provider.dart';
 
+import '../Utils/habit_utils.dart';
+
 final TextEditingController textEditingController = TextEditingController();
 
 class HomeScreen extends StatefulWidget {
@@ -94,9 +96,12 @@ class _HomeScreenState extends State<HomeScreen> {
         final habit = currrentHabits[index];
 
         // check if the habit is completed
-        bool isCompletedToday = isHabitCompletedToday();
+        bool isCompletedToday = isHabitCompletedToday(habit.completeddays);
 
         // return habit tile UI
+          return ListTile(
+            title: Text(habit.name),
+          );
 
       },
     );
