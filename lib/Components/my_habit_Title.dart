@@ -3,10 +3,13 @@ import 'package:flutter/material.dart';
 class MyHabitTitle extends StatelessWidget {
   final bool isCompleted;
   final String text;
+  final void Function(bool?)? onChanged;
+
   const MyHabitTitle({
     super.key,
     required this.text,
     required this.isCompleted,
+    required
   });
 
   @override
