@@ -20,7 +20,9 @@ class MyHabitTitle extends StatelessWidget {
             : Theme.of(context).colorScheme.secondary,
         borderRadius: BorderRadius.circular(8)
       ),
-      child: Text(text),
+      child: ListTile(
+        title: Text(habit.name),
+      );,
     );
   }
 }

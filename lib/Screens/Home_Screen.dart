@@ -107,6 +107,3 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 }
 
-// ListTile(
-// title: Text(habit.name),
-// );
