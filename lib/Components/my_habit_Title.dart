@@ -21,8 +21,9 @@ class MyHabitTitle extends StatelessWidget {
         borderRadius: BorderRadius.circular(8)
       ),
       child: ListTile(
-        title: Text(habit.name),
-      );,
+        title: Text(text),
+
+      ),
     );
   }
 }
