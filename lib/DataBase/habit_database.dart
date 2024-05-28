@@ -37,6 +37,7 @@ class HabitDataBase extends ChangeNotifier {
   Future<DateTime?> getFirstLaunchDate()
   async {
     final settings = await isar.appSettings.where().findFirst();
+    return settings?.firstLaunchDate;
   }
 
 /*
