@@ -88,7 +88,16 @@ class _HomeScreenState extends State<HomeScreen> {
     List<Habit> currrentHabits = habitDataBase.currentHabits;
 
     return ListView.builder(
+      itemCount: currrentHabits.length,
       itemBuilder: (context, index) {
+        // get each individual habit
+        final habit = currrentHabits[index];
+
+        // check if the habit is completed
+        bool isCompletedToday = isHabitCompletedToday();
+
+        // return habit tile UI
+
       },
     );
   }
