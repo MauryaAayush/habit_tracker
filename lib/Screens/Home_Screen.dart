@@ -140,8 +140,6 @@ class _HomeScreenState extends State<HomeScreen> {
             onPressed: () {
               //   pop box
               Navigator.pop(context);
-              //   clear controller
-              textEditingController.clear();
             },
             child: const Text('Cancel'),
           )
