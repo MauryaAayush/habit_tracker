@@ -24,7 +24,7 @@ class MyHabitTitle extends StatelessWidget {
         //   edit option
         SlidableAction(
           onPressed: editHabit,
-          backgroundColor: Colors.green.shade800,
+          backgroundColor: Colors.grey.shade800,
           icon: Icons.settings,
           borderRadius: BorderRadius.circular(8),
         ),
