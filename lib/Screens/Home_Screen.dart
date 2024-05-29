@@ -30,42 +30,41 @@ class _HomeScreenState extends State<HomeScreen> {
   void createNewHabit() {
     showDialog(
       context: context,
-      builder: (context) =>
-          AlertDialog(
-            content: TextField(
-              controller: textEditingController,
-              decoration: const InputDecoration(
-                hintText: "Create a new habit",
-              ),
-            ),
-            actions: [
-              //   save Button
-              MaterialButton(
-                onPressed: () {
-                  //   get the new habit name
-                  String newHabitName = textEditingController.text;
-                  //   Save to database
-                  context.read<HabitDataBase>().addhabit(newHabitName);
-                  //   pop box
-                  Navigator.pop(context);
-                  //   clear controller
-                  textEditingController.clear();
-                },
-                child: const Text('Save'),
-              ),
-
-              //   Cancel Button
-              MaterialButton(
-                onPressed: () {
-                  //   pop box
-                  Navigator.pop(context);
-                  //   clear controller
-                  textEditingController.clear();
-                },
-                child: const Text('Cancel'),
-              )
-            ],
+      builder: (context) => AlertDialog(
+        content: TextField(
+          controller: textEditingController,
+          decoration: const InputDecoration(
+            hintText: "Create a new habit",
           ),
+        ),
+        actions: [
+          //   save Button
+          MaterialButton(
+            onPressed: () {
+              //   get the new habit name
+              String newHabitName = textEditingController.text;
+              //   Save to database
+              context.read<HabitDataBase>().addhabit(newHabitName);
+              //   pop box
+              Navigator.pop(context);
+              //   clear controller
+              textEditingController.clear();
+            },
+            child: const Text('Save'),
+          ),
+
+          //   Cancel Button
+          MaterialButton(
+            onPressed: () {
+              //   pop box
+              Navigator.pop(context);
+              //   clear controller
+              textEditingController.clear();
+            },
+            child: const Text('Cancel'),
+          )
+        ],
+      ),
     );
   }
 
@@ -84,40 +83,39 @@ class _HomeScreenState extends State<HomeScreen> {
 
     showDialog(
       context: context,
-      builder: (context) =>
-          AlertDialog(
-            content: TextField(
-              controller: textEditingController,
-            ),
-            actions: [
-              //   save button
-              MaterialButton(
-                onPressed: () {
-                  //   get the new habit name
-                  String newHabitName = textEditingController.text;
-                  //   Save to database
-                  context
-                      .read<HabitDataBase>()
-                      .updateHabitName(habit.id, newHabitName);
-                  //   pop box
-                  Navigator.pop(context);
-                  //   clear controller
-                  textEditingController.clear();
-                },
-                child: const Text('Save'),
-              ),
-              //   Cancel Button
-              MaterialButton(
-                onPressed: () {
-                  //   pop box
-                  Navigator.pop(context);
-                  //   clear controller
-                  textEditingController.clear();
-                },
-                child: const Text('Cancel'),
-              )
-            ],
+      builder: (context) => AlertDialog(
+        content: TextField(
+          controller: textEditingController,
+        ),
+        actions: [
+          //   save button
+          MaterialButton(
+            onPressed: () {
+              //   get the new habit name
+              String newHabitName = textEditingController.text;
+              //   Save to database
+              context
+                  .read<HabitDataBase>()
+                  .updateHabitName(habit.id, newHabitName);
+              //   pop box
+              Navigator.pop(context);
+              //   clear controller
+              textEditingController.clear();
+            },
+            child: const Text('Save'),
           ),
+          //   Cancel Button
+          MaterialButton(
+            onPressed: () {
+              //   pop box
+              Navigator.pop(context);
+              //   clear controller
+              textEditingController.clear();
+            },
+            child: const Text('Cancel'),
+          )
+        ],
+      ),
     );
   }
 
@@ -126,30 +124,29 @@ class _HomeScreenState extends State<HomeScreen> {
   void deleteHabitBox(Habit habit) {
     showDialog(
       context: context,
-      builder: (context) =>
-          AlertDialog(
-            title: Text('Are you sure you want to delete?'),
-            actions: [
-              //   delete button
-              MaterialButton(
-                onPressed: () {
-                  //   Save to database
-                  context.read<HabitDataBase>().deleteHabit(habit.id);
-                  //   pop box
-                  Navigator.pop(context);
-                },
-                child: const Text('Delete'),
-              ),
-              //   Cancel Button
-              MaterialButton(
-                onPressed: () {
-                  //   pop box
-                  Navigator.pop(context);
-                },
-                child: const Text('Cancel'),
-              )
-            ],
+      builder: (context) => AlertDialog(
+        title: Text('Are you sure you want to delete?'),
+        actions: [
+          //   delete button
+          MaterialButton(
+            onPressed: () {
+              //   Save to database
+              context.read<HabitDataBase>().deleteHabit(habit.id);
+              //   pop box
+              Navigator.pop(context);
+            },
+            child: const Text('Delete'),
           ),
+          //   Cancel Button
+          MaterialButton(
+            onPressed: () {
+              //   pop box
+              Navigator.pop(context);
+            },
+            child: const Text('Cancel'),
+          )
+        ],
+      ),
     );
   }
 
@@ -158,18 +155,12 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
-        foregroundColor: Theme
-            .of(context)
-            .colorScheme
-            .inversePrimary,
+        foregroundColor: Theme.of(context).colorScheme.inversePrimary,
         elevation: 0,
       ),
       drawer: const MyDrawer(),
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Theme
-            .of(context)
-            .colorScheme
-            .tertiary,
+        backgroundColor: Theme.of(context).colorScheme.tertiary,
         onPressed: createNewHabit,
         elevation: 0,
         child: Icon(
@@ -197,21 +188,23 @@ class _HomeScreenState extends State<HomeScreen> {
     List<Habit> currentHabit = habitDatabase.currentHabits;
 
     //   return heat map UI
-    return FutureBuilder(
-      future: habitDatabase.getFirstLaunchDate(), builder: (context, snapshot) {
-    // once the data  is available -> build heatmap
-      if(snapshot.hasData!)
-        {
-          return MyHeatMap(startDate: snapshot.data!, datasets: preHeatMapDataset(currentHabit));
+    return FutureBuilder<DateTime?>(
+      future: habitDatabase.getFirstLaunchDate(),
+      builder: (context, snapshot) {
+        // once the data  is available -> build heatmap
+        if (snapshot.hasData) {
+          return MyHeatMap(
+              startDate: snapshot.data!,
+              datasets: preHeatMapDataset(currentHabit));
         }
 
-    //   handle case where no data is returned
-        else{
-        return Container();
-      }
-    },);
+        //   handle case where no da ta is returned
+        else {
+          return Container();
+        }
+      },
+    );
   }
-
 
   // build habit list
   Widget _buildHabitList() {
@@ -222,6 +215,8 @@ class _HomeScreenState extends State<HomeScreen> {
 
     return ListView.builder(
       itemCount: currrentHabits.length,
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
       itemBuilder: (context, index) {
         // get each individual habit
         final habit = currrentHabits[index];
