@@ -16,11 +16,10 @@ class MyHabitTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        if(onChanged != null  )
-          {
+        if (onChanged != null) {
           // toggle completion status
-            onChanged!(!isCompleted);
-          }
+          onChanged!(!isCompleted);
+        }
       },
       child: Container(
         padding: const EdgeInsets.all(12),
@@ -34,8 +33,8 @@ class MyHabitTitle extends StatelessWidget {
           title: Text(text),
           leading: Checkbox(
             activeColor: Colors.green,
-              value: isCompleted,
-              onChanged: onChanged,
+            value: isCompleted,
+            onChanged: onChanged,
           ),
         ),
       ),
