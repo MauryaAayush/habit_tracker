@@ -133,7 +133,7 @@ class _HomeScreenState extends State<HomeScreen> {
               //   pop box
               Navigator.pop(context);
             },
-            child: const Text('Save'),
+            child: const Text('Delete'),
           ),
           //   Cancel Button
           MaterialButton(
