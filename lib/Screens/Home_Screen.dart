@@ -186,7 +186,8 @@ class _HomeScreenState extends State<HomeScreen> {
           text: habit.name,
           isCompleted: isCompletedToday,
           onChanged: (value) => checkHabitOnOff(value, habit),
-          editHabit: (context) => editHabitBox,
+          editHabit: (context) => editHabitBox(habit),
+          deleteHabit: (context) => deleteHabitBox(habit),
         );
       },
     );
