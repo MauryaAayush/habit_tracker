@@ -166,7 +166,14 @@ class _HomeScreenState extends State<HomeScreen> {
           color: Colors.black,
         ),
       ),
-      body: _buildHabitList(),
+      body: ListView(
+        children: [
+        //   HeatMap
+
+        //   HabitList
+          _buildHabitList()
+        ],
+      ),
     );
   }
 
