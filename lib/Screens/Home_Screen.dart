@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:habit_tracker/Components/My_Drawer.dart';
 import 'package:habit_tracker/Components/my_habit_Title.dart';
@@ -169,7 +170,7 @@ class _HomeScreenState extends State<HomeScreen> {
       body: ListView(
         children: [
         //   HeatMap
-
+          _buildHeatMap(),
         //   HabitList
           _buildHabitList()
         ],
@@ -177,6 +178,23 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
+  // build heat map
+  Widget _buildHeatMap()
+  {
+  // habit database
+    final habitDatabase = context.watch<HabitDataBase>();
+
+  //   current habit
+    List<Habit> currentHabit = habitDatabase.currentHabits;
+
+  //   return heat map UI
+
+
+  }
+
+
+
+  // build habit list
   Widget _buildHabitList() {
     final habitDataBase = context.watch<HabitDataBase>();
 
