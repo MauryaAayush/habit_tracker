@@ -79,6 +79,18 @@ class _HomeScreenState extends State<HomeScreen> {
   {
     // set controller for the text
       textEditingController.text = habit.name;
+
+      showDialog(context: context, builder: (context) => AlertDialog(
+        content: TextField(
+          controller: textEditingController,
+        ),
+        actions: [
+        //   save button
+
+
+        //   cancel button
+        ],
+      ),);
   }
 
   // delete habit box
