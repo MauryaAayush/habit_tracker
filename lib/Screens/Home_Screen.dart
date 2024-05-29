@@ -123,23 +123,15 @@ class _HomeScreenState extends State<HomeScreen> {
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        content: TextField(
-          controller: textEditingController,
-        ),
+        title: Text('Are you sure you want to delete?'),
         actions: [
-          //   save button
+          //   delete button
           MaterialButton(
             onPressed: () {
-              //   get the new habit name
-              String newHabitName = textEditingController.text;
               //   Save to database
-              context
-                  .read<HabitDataBase>()
-                  .updateHabitName(habit.id, newHabitName);
+              context.read<HabitDataBase>().deleteHabit(habit.id);
               //   pop box
               Navigator.pop(context);
-              //   clear controller
-              textEditingController.clear();
             },
             child: const Text('Save'),
           ),
