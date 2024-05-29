@@ -75,6 +75,10 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   // edit habit box
+  void editHabitBox(Habit habit)
+  {
+
+  }
 
   // delete habit box
 
