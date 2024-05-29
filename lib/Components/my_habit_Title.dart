@@ -19,7 +19,7 @@ class MyHabitTitle extends StatelessWidget {
         if(onChanged != null  )
           {
           // toggle completion status
-
+            onChanged!(!isCompleted);
           }
       },
       child: Container(
