@@ -152,7 +152,9 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-
+        backgroundColor: Colors.transparent,
+        foregroundColor: Theme.of(context).colorScheme.inversePrimary,
+      elevation: 0,
       ),
       drawer: const MyDrawer(),
       floatingActionButton: FloatingActionButton(
