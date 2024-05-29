@@ -157,6 +157,8 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         foregroundColor: Theme.of(context).colorScheme.inversePrimary,
+        centerTitle: true,
+        title: const Text('Habit Tracker'),
         elevation: 0,
         actions: [
           IconButton(
