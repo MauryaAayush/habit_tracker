@@ -227,7 +227,7 @@ class _HomeScreenState extends State<HomeScreen> {
         final habit = currrentHabits[index];
 
         // check if the habit is completed
-        bool isCompletedToday = isHabitCompletedToday(habit.completeddays);
+        bool isCompletedToday = isHabitCompletedToday(habit.completedDays);
 
         // return habit tile UI
         return MyHabitTitle(
