@@ -6,6 +6,7 @@ class MyHabitTitle extends StatelessWidget {
   final String text;
   final void Function(bool?)? onChanged;
   final void Function(BuildContext)? editHabit;
+  final void Function(BuildContext)? deleteHabit;
 
   const MyHabitTitle({
     super.key,
@@ -13,6 +14,7 @@ class MyHabitTitle extends StatelessWidget {
     required this.isCompleted,
     required this.onChanged,
     required this.editHabit,
+    required this.deleteHabit,
   });
 
   @override
@@ -28,6 +30,14 @@ class MyHabitTitle extends StatelessWidget {
         ),
 
         //   delete option
+        SlidableAction(
+          onPressed: deleteHabit,
+          backgroundColor: Colors.red,
+          icon: Icons.delete,
+          borderRadius: BorderRadius.circular(8),
+        ),
+
+
       ]),
       child: GestureDetector(
         onTap: () {
