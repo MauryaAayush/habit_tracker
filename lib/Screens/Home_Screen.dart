@@ -77,7 +77,8 @@ class _HomeScreenState extends State<HomeScreen> {
   // edit habit box
   void editHabitBox(Habit habit)
   {
-
+    // set controller for the text
+      textEditingController.text = habit.name;
   }
 
   // delete habit box
