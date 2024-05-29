@@ -78,11 +78,11 @@ crud operations
     if (habit != null) {
       await isar.writeTxn(() async {
         // if habit is completed -> add the  current date to the completed Days List
-        if (isCompleted && !habit.completeddays.contains(DateTime.now())) {
+        if (isCompleted && !habit.completedDays.contains(DateTime.now())) {
           final today = DateTime.now();
 
           // add the current date if it's not already oin the list
-          habit.completeddays.add(DateTime(
+          habit.completedDays.add(DateTime(
             today.year,
             today.month,
             today.day,
@@ -92,7 +92,7 @@ crud operations
         else {
           // remove the current date if the habit is marked as not completed
 
-          habit.completeddays.removeWhere((date) =>
+          habit.completedDays.removeWhere((date) =>
               date.year == DateTime.now().year &&
               date.month == DateTime.now().month &&
               date.day == DateTime.now().day);
