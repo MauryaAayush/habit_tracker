@@ -86,9 +86,29 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         actions: [
         //   save button
-
-
-        //   cancel button
+          MaterialButton(
+            onPressed: () {
+              //   get the new habit name
+              String newHabitName = textEditingController.text;
+              //   Save to database
+              context.read<HabitDataBase>().updateHabitName(habit.id, newHabitName);
+              //   pop box
+              Navigator.pop(context);
+              //   clear controller
+              textEditingController.clear();
+            },
+            child: const Text('Save'),
+          ),
+          //   Cancel Button
+          MaterialButton(
+            onPressed: () {
+              //   pop box
+              Navigator.pop(context);
+              //   clear controller
+              textEditingController.clear();
+            },
+            child: const Text('Cancel'),
+          )
         ],
       ),);
   }
