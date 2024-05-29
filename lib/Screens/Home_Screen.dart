@@ -119,6 +119,8 @@ class _HomeScreenState extends State<HomeScreen> {
 
   // delete habit box
 
+  void deleteHabitBox(Habit habit)
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -157,7 +159,7 @@ class _HomeScreenState extends State<HomeScreen> {
           text: habit.name,
           isCompleted: isCompletedToday,
           onChanged: (value) => checkHabitOnOff(value, habit),
-          editHabit: ,
+          editHabit: (context) => editHabitBox,
         );
       },
     );
