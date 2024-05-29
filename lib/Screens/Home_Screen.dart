@@ -202,7 +202,7 @@ class _HomeScreenState extends State<HomeScreen> {
     // once the data  is available -> build heatmap
       if(snapshot.hasData!)
         {
-          return MyHeatMap(startDate: snapshot.data!, datasets: );
+          return MyHeatMap(startDate: snapshot.data!, datasets: preHeatMapDataset(currentHabit));
         }
 
     //   handle case where no data is returned

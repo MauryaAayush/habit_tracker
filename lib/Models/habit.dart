@@ -12,7 +12,7 @@ class Habit {
   late String name;
 
 // complete days
-  List<DateTime> completeddays = [
+  List<DateTime> completedDays = [
   //   dateTime(years, months, day),
   //   dateTime(years, months, day),
   //   dateTime(years, months, day),
