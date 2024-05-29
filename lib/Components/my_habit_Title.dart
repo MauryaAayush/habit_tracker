@@ -62,8 +62,11 @@ class MyHabitTitle extends StatelessWidget {
               style: TextStyle(
                 color: isCompleted
                     ? Colors.white
-                    : Theme.of(context).colorScheme.inversePrimary              ),),
+                    : Theme.of(context).colorScheme.inversePrimary
+    // color:  Theme.of(context).colorScheme.tertiary,
+                            ),),
               leading: Checkbox(
+
                 activeColor: Colors.green,
                 value: isCompleted,
                 onChanged: onChanged,

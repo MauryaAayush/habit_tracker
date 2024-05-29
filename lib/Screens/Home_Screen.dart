@@ -7,6 +7,7 @@ import 'package:habit_tracker/DataBase/habit_database.dart';
 import 'package:habit_tracker/Models/habit.dart';
 import 'package:provider/provider.dart';
 
+import '../Themes/Theme_Provider.dart';
 import '../Utils/habit_utils.dart';
 
 final TextEditingController textEditingController = TextEditingController();
@@ -157,6 +158,19 @@ class _HomeScreenState extends State<HomeScreen> {
         backgroundColor: Colors.transparent,
         foregroundColor: Theme.of(context).colorScheme.inversePrimary,
         elevation: 0,
+        actions: [
+          IconButton(
+            icon: Icon(
+              Provider.of<ThemeProvider>(context).isDarkMode
+                  ? Icons.dark_mode
+                  : Icons.light_mode,
+            ),
+            onPressed: () {
+              Provider.of<ThemeProvider>(context, listen: false).toggleTheme();
+            },
+          ),
+
+        ],
       ),
       drawer: const MyDrawer(),
       floatingActionButton: FloatingActionButton(
