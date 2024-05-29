@@ -75,23 +75,26 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   // edit habit box
-  void editHabitBox(Habit habit)
-  {
+  void editHabitBox(Habit habit) {
     // set controller for the text
-      textEditingController.text = habit.name;
+    textEditingController.text = habit.name;
 
-      showDialog(context: context, builder: (context) => AlertDialog(
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
         content: TextField(
           controller: textEditingController,
         ),
         actions: [
-        //   save button
+          //   save button
           MaterialButton(
             onPressed: () {
               //   get the new habit name
               String newHabitName = textEditingController.text;
               //   Save to database
-              context.read<HabitDataBase>().updateHabitName(habit.id, newHabitName);
+              context
+                  .read<HabitDataBase>()
+                  .updateHabitName(habit.id, newHabitName);
               //   pop box
               Navigator.pop(context);
               //   clear controller
@@ -110,7 +113,8 @@ class _HomeScreenState extends State<HomeScreen> {
             child: const Text('Cancel'),
           )
         ],
-      ),);
+      ),
+    );
   }
 
   // delete habit box
@@ -153,6 +157,7 @@ class _HomeScreenState extends State<HomeScreen> {
           text: habit.name,
           isCompleted: isCompletedToday,
           onChanged: (value) => checkHabitOnOff(value, habit),
+          editHabit: ,
         );
       },
     );
