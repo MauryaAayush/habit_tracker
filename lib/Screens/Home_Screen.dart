@@ -151,7 +151,9 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+
+      ),
       drawer: const MyDrawer(),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Theme.of(context).colorScheme.tertiary,
