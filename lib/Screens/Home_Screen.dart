@@ -68,13 +68,15 @@ class _HomeScreenState extends State<HomeScreen> {
 
   // check habit on & off
   void checkHabitOnOff(bool? value, Habit habit) {
-  //   update habit completion status
-  if(value != null)
-    {
+    // update habit completion status
+    if (value != null) {
       context.read<HabitDataBase>().updateHabitCompletion(habit.id, value);
     }
-
   }
+
+  // edit habit box
+
+  // delete habit box
 
   @override
   Widget build(BuildContext context) {
@@ -113,8 +115,7 @@ class _HomeScreenState extends State<HomeScreen> {
         return MyHabitTitle(
           text: habit.name,
           isCompleted: isCompletedToday,
-          onChanged: (value) => checkHabitOnOff(value,habit),
-
+          onChanged: (value) => checkHabitOnOff(value, habit),
         );
       },
     );
