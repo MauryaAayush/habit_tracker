@@ -72,9 +72,13 @@ Welcome to the Habit Tracking App, a Flutter-based application designed to help 
 ###
 <h3 align="center"><i>Video</i></h3>
 <div align="center">
-
-  
  <video src="https://github.com/MauryaAayush/habit_tracker/assets/143180849/9a02f23a-6698-4e11-86a3-8e1769a5eebc">
+</div>
+
+
+###
+<div align="center">
+<a href="https://github.com/MauryaAayush/habit_tracker">-> 👉📚 See The Code 📚 👈<-</a>
 </div>
 
 
