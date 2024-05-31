@@ -11,6 +11,7 @@ Welcome to the Habit Tracking App, a Flutter-based application designed to help 
 * User-friendly Interface: Enjoy a clean and intuitive interface designed for seamless user experience.
 * Customizable Themes: Personalize the app's appearance with various themes
 
+
 ## Technologies Used
 * Flutter: The app is built using Flutter, a powerful framework for building natively compiled applications for mobile, web, and desktop from a single codebase.
 * Dart: The primary programming language used for Flutter development.
