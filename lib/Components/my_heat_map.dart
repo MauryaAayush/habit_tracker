@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_heatmap_calendar/flutter_heatmap_calendar.dart';
+import 'package:habit_tracker/Themes/Theme_Provider.dart';
+import 'package:provider/provider.dart';
 
 class MyHeatMap extends StatelessWidget {
   final Map<DateTime, int> datasets;
@@ -19,7 +21,7 @@ class MyHeatMap extends StatelessWidget {
         datasets: datasets,
         colorMode: ColorMode.color,
         defaultColor: Theme.of(context).colorScheme.secondary,
-        textColor: Colors.white,
+        textColor: Provider.of<ThemeProvider>(context).isDarkMode? Colors.white:Colors.black,
         showColorTip: false,
         showText: true,
         scrollable: true,
