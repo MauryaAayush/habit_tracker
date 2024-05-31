@@ -43,13 +43,11 @@ Welcome to the Habit Tracking App, a Flutter-based application designed to help 
 
 <div align="center">
 
-<img src="https://github.com/MauryaAayush/habit_tracker/assets/143180849/7a2c5e96-f167-4d9b-b18e-871d6cb22df9" height=500px hspace=20>
-<img src="https://github.com/MauryaAayush/habit_tracker/assets/143180849/b3a97056-f45f-456c-86ac-e66551e5f1ed" height=500px hspace=20>
-
-<img src="https://github.com/MauryaAayush/habit_tracker/assets/143180849/74f55481-6851-4dcd-a290-d123cc407b6b" height=500px hspace=20>
-<img src="https://github.com/MauryaAayush/habit_tracker/assets/143180849/b1d46b2a-deea-4a1e-add0-c8420cd8c06f" height=500px hspace=20>
-
 <img src="https://github.com/MauryaAayush/habit_tracker/assets/143180849/d21a1697-cd19-4fc3-acde-14e1040e4490" height=500px hspace=20>
+<img src="https://github.com/MauryaAayush/habit_tracker/assets/143180849/b1d46b2a-deea-4a1e-add0-c8420cd8c06f" height=500px hspace=20>
+<img src="https://github.com/MauryaAayush/habit_tracker/assets/143180849/74f55481-6851-4dcd-a290-d123cc407b6b" height=500px hspace=20>
+<img src="https://github.com/MauryaAayush/habit_tracker/assets/143180849/b3a97056-f45f-456c-86ac-e66551e5f1ed" height=500px hspace=20>
+<img src="https://github.com/MauryaAayush/habit_tracker/assets/143180849/7a2c5e96-f167-4d9b-b18e-871d6cb22df9" height=500px hspace=20>
 
 </div>
 
@@ -60,11 +58,11 @@ Welcome to the Habit Tracking App, a Flutter-based application designed to help 
 ###
 
 <div align="center">
-<img src="https://github.com/MauryaAayush/habit_tracker/assets/143180849/67243fac-62d5-44cf-80db-9df8a58ff7b8" height=500px hspace=20>
-<img src="https://github.com/MauryaAayush/habit_tracker/assets/143180849/c86a0477-9f52-4caf-8ecd-bdeb70c2a590" height=500px hspace=20>
 
-<img src="https://github.com/MauryaAayush/habit_tracker/assets/143180849/1ea6c9bb-3bfd-4647-bb25-0d1b4474605c" height=500px hspace=20>
 <img src="https://github.com/MauryaAayush/habit_tracker/assets/143180849/0a57fa04-b4b8-4ed2-9822-f1bad3f70d28" height=500px hspace=20>
+<img src="https://github.com/MauryaAayush/habit_tracker/assets/143180849/1ea6c9bb-3bfd-4647-bb25-0d1b4474605c" height=500px hspace=20>
+<img src="https://github.com/MauryaAayush/habit_tracker/assets/143180849/c86a0477-9f52-4caf-8ecd-bdeb70c2a590" height=500px hspace=20>
+<img src="https://github.com/MauryaAayush/habit_tracker/assets/143180849/67243fac-62d5-44cf-80db-9df8a58ff7b8" height=500px hspace=20>
 <img src="https://github.com/MauryaAayush/habit_tracker/assets/143180849/ce9b97e6-b7da-4cec-ad89-b304019f05a2" height=500px hspace=20>
 
 
